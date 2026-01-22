@@ -114,7 +114,7 @@ export default function AdminBookings() {
                     <User size={28} strokeWidth={2} />
                   </div>
                   <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                    #{booking.id.slice(0, 6)}
+                    #{String(booking.id).slice(0, 6)}
                   </span>
                 </div>
 

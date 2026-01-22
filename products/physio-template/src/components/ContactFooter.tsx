@@ -53,11 +53,27 @@ export default function ContactFooter() {
          </div>
       </section>
 
-      {/* Footer - Inspired by Reference */}
-      <footer className="bg-brand-primary text-white pt-24 pb-12 overflow-hidden border-t border-white/5">
-        <div className="container-custom">
-          {/* Newsletter Section - De-congested */}
-          <div className="relative mb-32 group">
+       {/* Footer - Inspired by Reference */}
+       <footer className="bg-brand-primary text-white pt-24 pb-12 overflow-hidden border-t border-white/5">
+         <div className="container-custom">
+           {/* Google Maps Embed - Upward Footer */}
+           <div className="mb-20">
+             <div className="rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl">
+               <iframe 
+                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d435519.2274446554!2d74.00471526778064!3d31.483103653925408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191100483fd88f%3A0xf07c586e0443c25b!2sA%20Khan%20Physiotherapy%20And%20Kinetic%20Expert%20Clinic!5e0!3m2!1sen!2s!4v1769091520828!5m2!1sen!2s" 
+                 width="100%" 
+                 height="450" 
+                 style={{ border: 0 }} 
+                 allowFullScreen 
+                 loading="lazy" 
+                 referrerPolicy="no-referrer-when-downgrade"
+                 className="w-full"
+               />
+             </div>
+           </div>
+
+           {/* Newsletter Section - De-congested */}
+           <div className="relative mb-32 group">
             <div className="absolute inset-0 bg-brand-secondary rounded-[3rem] translate-y-2 translate-x-1 transition-transform group-hover:translate-x-0 group-hover:translate-y-0" />
             <div className="relative bg-white text-brand-primary rounded-[3rem] p-12 md:p-20 shadow-2xl flex flex-col lg:flex-row items-center gap-16 border border-slate-100">
                <div className="flex-1 space-y-6">
