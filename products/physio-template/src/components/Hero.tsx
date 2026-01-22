@@ -39,7 +39,7 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-brand-secondary text-sm font-bold uppercase tracking-widest backdrop-blur-md"
               >
                 <div className="w-2 h-2 bg-brand-secondary rounded-full animate-pulse" />
-                #1 Rated Clinic in Lahore
+                Top Rated Clinic in Lahore
               </motion.div>
 
               <div className="space-y-6">
@@ -129,7 +129,7 @@ export default function Hero() {
                 >
                   <h3 className="text-3xl font-black text-white">Dr. Moez Khan</h3>
                   <div className="flex justify-between items-center">
-                    <span className="text-brand-secondary font-bold text-xs uppercase tracking-[0.2em]">Principal Specialist</span>
+                    <span className="text-brand-secondary font-bold text-xs uppercase tracking-[0.2em]">Physiotherapist & Chiropractor</span>
                     <div className="bg-brand-secondary/20 px-3 py-1 rounded-full text-[10px] font-black text-brand-secondary uppercase border border-brand-secondary/30">
                       Expert
                     </div>
@@ -153,7 +153,7 @@ export default function Hero() {
               {[
                 { icon: Activity, value: "98%", label: "Recovery Rate", sub: "Clinical success" },
                 { icon: Clock, value: "6+", label: "Years Exp.", sub: "Medical practice" },
-                { icon: Users, value: "10+", label: "Specialists", sub: "Expert clinical team" }
+                { icon: Users, value: "500+", label: "Patients", sub: "Happy Patients" }
               ].map((stat, i) => (
                 <div key={stat.label} className="p-10 flex items-center gap-8 group">
                   <div className="w-20 h-20 bg-brand-secondary/10 rounded-[1.5rem] flex items-center justify-center text-brand-secondary group-hover:bg-brand-secondary group-hover:text-white transition-all duration-500">
