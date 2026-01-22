@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Calendar, Phone, Mail, User, Clock, CheckCircle, XCircle, Loader2 } from "lucide-react";
 
 interface Booking {
-  id: number;
+  id: string;
   patientName: string;
   phone: string;
   date: string;
@@ -114,7 +114,7 @@ export default function AdminBookings() {
                     <User size={28} strokeWidth={2} />
                   </div>
                   <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                    #{String(booking.id).slice(0, 6)}
+                    #{booking.id.slice(0, 8)}
                   </span>
                 </div>
 

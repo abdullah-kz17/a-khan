@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
+import { kv } from "@vercel/kv";
 
 export async function POST(request: Request) {
   try {
@@ -14,15 +14,24 @@ export async function POST(request: Request) {
       );
     }
 
-    const booking = await prisma.booking.create({
-      data: {
-        patientName,
-        phone,
-        date,
-        time,
-        service: service || "General Consultation",
-      },
-    });
+    const id = crypto.randomUUID();
+
+    const booking = {
+      id,
+      patientName,
+      phone,
+      date,
+      time,
+      service: service || "General Consultation",
+      status: "PENDING",
+      createdAt: new Date().toISOString(),
+    };
+
+    // Save booking to KV
+    await kv.set(`booking:${id}`, booking);
+
+    // Add to index for listing (newest first)
+    await kv.lpush("bookings:all", id);
 
     return NextResponse.json({ success: true, booking }, { status: 201 });
   } catch (error) {
