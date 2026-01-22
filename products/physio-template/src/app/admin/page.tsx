@@ -13,7 +13,7 @@ export default function AdminLogin() {
     e.preventDefault();
     
     // Simple password check - you can change this password
-    if (password === "akhan2026") {
+    if (password === "molvi2002") {
       sessionStorage.setItem("adminAuth", "true");
       router.push("/admin/bookings");
     } else {
@@ -58,10 +58,6 @@ export default function AdminLogin() {
             Access Dashboard
           </button>
         </form>
-
-        <p className="mt-8 text-center text-white/40 text-xs font-medium">
-          Default password: akhan2026
-        </p>
       </div>
     </div>
   );
