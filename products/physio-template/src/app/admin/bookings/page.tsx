@@ -148,14 +148,6 @@ export default function AdminBookings() {
                   </div>
                 </div>
 
-                {/* Message */}
-                {booking.message && (
-                  <div className="pt-6 border-t border-slate-100">
-                    <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Message</p>
-                    <p className="text-sm text-slate-600 leading-relaxed">{booking.message}</p>
-                  </div>
-                )}
-
                 {/* Footer */}
                 <div className="mt-6 pt-6 border-t border-slate-100 flex items-center justify-between">
                   <div className="flex flex-col">
