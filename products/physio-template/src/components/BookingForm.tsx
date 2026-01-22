@@ -18,10 +18,39 @@ export default function BookingForm() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!time) return alert("Please select a clinical time window.");
+    
     setLoading(true);
-    await new Promise(r => setTimeout(r, 2000));
-    setLoading(false);
-    setDone(true);
+    
+    try {
+        // Collect form data
+        const formData = new FormData(e.target as HTMLFormElement);
+        const data = {
+            patientName: (e.target as HTMLFormElement).querySelector('input[type="text"]')?.value,
+            phone: (e.target as HTMLFormElement).querySelector('input[type="tel"]')?.value,
+            date: (e.target as HTMLFormElement).querySelector('input[type="date"]')?.value,
+            service: (e.target as HTMLFormElement).querySelector('select')?.value,
+            time: time
+        };
+
+        const response = await fetch('/api/booking', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            setDone(true);
+        } else {
+            alert("Something went wrong. Please try again.");
+        }
+    } catch (error) {
+        console.error("Booking error:", error);
+        alert("Failed to submit booking.");
+    } finally {
+        setLoading(false);
+    }
   };
 
   return (

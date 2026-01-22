@@ -11,32 +11,49 @@ export default function AboutDoctor() {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
       <div className="container-custom relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
           
           {/* Image Column */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             className="w-full lg:w-1/2 relative"
           >
-            <div className="aspect-[4/5] rounded-[3rem] overflow-hidden relative shadow-2xl border-4 border-white">
+            <div className="aspect-[4/5] rounded-[4rem] overflow-hidden relative shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border-8 border-white group">
               <img 
                 src="/images/owner-pic.jpeg" 
                 alt="Dr. Moez Khan" 
-                className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-transparent to-transparent opacity-60" />
               
               {/* Floating Badge */}
-              <div className="absolute bottom-10 right-10 bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-xl max-w-[200px] animate-bounce-slow">
-                 <div className="text-4xl font-black text-brand-secondary mb-1">100+</div>
-                 <div className="text-xs font-bold text-brand-primary uppercase tracking-widest leading-relaxed">
-                    Satisfied Patients treated this month
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="absolute bottom-10 left-10 right-10 bg-white/10 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-white/20 shadow-2xl"
+              >
+                 <div className="flex items-center justify-between">
+                    <div>
+                        <div className="text-4xl font-black text-white">6+</div>
+                        <div className="text-[10px] font-black text-brand-secondary uppercase tracking-[0.2em] mt-1">
+                           Years Clinic Exp.
+                        </div>
+                    </div>
+                    <div className="h-12 w-[1px] bg-white/20" />
+                    <div className="text-right">
+                        <div className="text-4xl font-black text-white">500+</div>
+                        <div className="text-[10px] font-black text-brand-secondary uppercase tracking-[0.2em] mt-1">
+                           Happy Patients
+                        </div>
+                    </div>
                  </div>
-              </div>
+              </motion.div>
             </div>
             {/* Pattern */}
-            <div className="absolute -z-10 top-10 -left-10 w-full h-full border-2 border-brand-secondary/20 rounded-[3rem]" />
+            <div className="absolute -z-10 -top-6 -left-6 w-full h-full border-2 border-brand-secondary/10 rounded-[4rem]" />
           </motion.div>
 
           {/* Content Column */}
@@ -44,43 +61,47 @@ export default function AboutDoctor() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-1/2 space-y-8"
+            className="w-full lg:w-1/2 space-y-10"
           >
-            <div className="header-chip">Meet The Expert</div>
-            
-            <h2 className="text-5xl lg:text-6xl font-bold leading-tight text-brand-primary">
-              Dr. Moez Khan
-            </h2>
-            
-            <div className="flex flex-col gap-2 border-l-4 border-brand-secondary pl-6">
-                <span className="text-2xl font-bold text-slate-700">Physio Therapist</span>
-                <span className="text-xl font-bold text-brand-secondary">Chiropractor</span>
+            <div className="space-y-6">
+                <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/5 border border-brand-primary/10 text-brand-primary text-[11px] font-black uppercase tracking-[0.3em]"
+                >
+                <div className="w-1.5 h-1.5 bg-brand-primary rounded-full animate-pulse" />
+                Meet The Expert
+                </motion.div>
+                
+                <h2 className="text-5xl lg:text-7xl font-bold leading-tight text-brand-primary tracking-tighter">
+                Dr. Moez Khan <br />
+                <span className="text-brand-secondary">Physio Therapist</span>
+                </h2>
+                
+                <p className="text-xl text-slate-500 leading-relaxed font-medium">
+                  Dr. Moez Khan is an expert in helping people recover from pain and movement problems. With over 6 years of experience, he provides personalized care to help you live a pain-free life.
+                </p>
             </div>
 
-            <p className="text-lg text-slate-600 leading-relaxed font-medium">
-              With specialized expertise in neurological rehabilitation and movement therapy, Dr. Moez Khan provides personalized care addressing the root cause of pain and mobility issues.
-            </p>
-
-            <div className="space-y-4 pt-4">
+            <div className="grid sm:grid-cols-2 gap-8 pt-4">
                {[
-                 "Neurological Rehabilitation Expert",
-                 "Advanced Movement Therapy",
-                 "Root Cause Analysis & Treatment",
-                 "Personalized Care Plans"
+                 { title: "Back & Neck Pain", label: "Expertise" },
+                 { title: "Chiropractic Care", label: "Specialty" },
+                 { title: "Stroke Recovery", label: "Technique" },
+                 { title: "Sports Injuries", label: "Focus" }
                ].map((item, i) => (
-                 <div key={i} className="flex items-center gap-4 group">
-                    <div className="w-8 h-8 rounded-full bg-brand-secondary/10 flex items-center justify-center text-brand-secondary group-hover:bg-brand-secondary group-hover:text-white transition-colors">
-                       <CheckCircle2 size={16} />
-                    </div>
-                    <span className="font-bold text-brand-primary">{item}</span>
+                 <div key={i} className="flex flex-col gap-1 border-l-4 border-slate-100 pl-6 group hover:border-brand-secondary transition-colors">
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{item.label}</span>
+                    <span className="text-lg font-bold text-brand-primary transition-colors">{item.title}</span>
                  </div>
                ))}
             </div>
 
-            <div className="pt-8">
-               <a href="#booking" className="btn-primary flex items-center gap-3 w-fit">
+            <div className="pt-10">
+               <a href="#booking" className="group bg-brand-primary text-white px-10 py-5 rounded-soft font-bold text-sm uppercase tracking-widest hover:bg-brand-accent transition-all shadow-xl active:scale-95 flex items-center gap-2 w-fit">
                   <User size={18} />
-                  Book Consultation
+                  Book Your Session
                </a>
             </div>
 

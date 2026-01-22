@@ -22,7 +22,8 @@ export default function Navbar() {
     { name: "Services", href: "/services" },
     { name: "About Clinic", href: "/about" },
     { name: "Booking", href: "/booking" },
-    { name: "Reviews", href: "/reviews" },
+    // { name: "Reviews", href: "/reviews" },
+    { name: "Gallery", href: "/gallery" },
   ];
 
   return (
@@ -38,20 +39,18 @@ export default function Navbar() {
               <MapPin size={14} className="text-brand-secondary" />
               <span className="opacity-70">House 14, Mehar Fiaz Colony, BB Block, Fateh Garh, Lahore</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Mail size={14} className="text-brand-secondary" />
-              <span className="opacity-70">a.khanphysioandkinetic@gmail.com</span>
+            <div className="flex items-center gap-2 max-w-[200px] xl:max-w-none">
+              <Mail size={14} className="text-brand-secondary shrink-0" />
+              <span className="opacity-70 truncate xl:whitespace-normal">a.khanphysioandkinetic@gmail.com</span>
             </div>
             <a href="https://wa.me/923084687707" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-brand-secondary transition-colors">
               <MessageSquare size={14} className="text-brand-secondary" />
-              <span className="opacity-70">0308 4687707</span>
+              <span className="opacity-70">0308-4687707</span>
             </a>
           </div>
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-4 border-r border-white/10 pr-6">
-              <a href="https://www.facebook.com/share/1CEMJEnaL6/" target="_blank"><Facebook size={14} className="hover:text-brand-secondary transition-colors cursor-pointer" /></a>
-              <a href="https://www.instagram.com/dr.moezkhan?igsh=MTVtdWY2amNxc212cg==" target="_blank"><Instagram size={14} className="hover:text-brand-secondary transition-colors cursor-pointer" /></a>
-              {/* <Linkedin size={14} className="hover:text-brand-secondary transition-colors cursor-pointer" /> */}
+            <div className="flex items-center gap-4 text-white/50 pr-6 border-r border-white/10">
+               <span className="text-[9px] uppercase tracking-widest">Mon-Sat: 3PM - 10PM</span>
             </div>
             <div className="flex items-center gap-2">
               <Phone size={14} className="text-brand-secondary" />
@@ -149,9 +148,9 @@ export default function Navbar() {
                      <Phone size={24} className="text-brand-secondary" />
                      <span className="text-xl font-bold">0315-4289654</span>
                   </div>
-                  <div className="flex items-center gap-4 text-white/60">
-                     <Mail size={20} className="text-brand-secondary" />
-                     <span className="font-medium text-sm">a.khanphysioandkinetic@gmail.com</span>
+                  <div className="flex items-center gap-4 text-white/60 overflow-hidden">
+                     <Mail size={20} className="text-brand-secondary shrink-0" />
+                     <span className="font-medium text-xs sm:text-sm break-all">a.khanphysioandkinetic@gmail.com</span>
                   </div>
                </div>
                <button 

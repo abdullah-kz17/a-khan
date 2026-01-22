@@ -132,13 +132,13 @@ export default function ContactFooter() {
                       <Phone className="text-brand-secondary" size={20} />
                       <p className="text-white/60 font-bold">0315-4289654</p>
                    </div>
-                   <div className="flex items-center gap-4">
-                       <Mail className="text-brand-secondary" size={20} />
-                       <p className="text-white/60 font-bold break-all">a.khanphysioandkinetic@gmail.com</p>
+                   <div className="flex items-center gap-4 group">
+                       <Mail className="text-brand-secondary shrink-0" size={20} />
+                       <p className="text-white/60 font-bold text-sm md:text-base break-all">a.khanphysioandkinetic@gmail.com</p>
                     </div>
                     <a href="https://wa.me/923084687707" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group cursor-pointer hover:translate-x-1 transition-transform">
                        <MessageSquare className="text-brand-secondary" size={20} />
-                       <p className="text-white/60 font-bold group-hover:text-brand-secondary transition-colors">WhatsApp: 0308 4687707</p>
+                       <p className="text-white/60 font-bold group-hover:text-brand-secondary transition-colors">WhatsApp: 0308-4687707</p>
                     </a>
                  </div>
              </div>
@@ -147,20 +147,16 @@ export default function ContactFooter() {
              <div className="bg-white/5 rounded-soft p-8 border border-white/10 space-y-6">
                 <h4 className="text-sm font-bold text-brand-secondary uppercase tracking-[0.2em] flex items-center gap-2">
                    <div className="w-2 h-2 rounded-full bg-brand-secondary animate-pulse" />
-                   Open Now
+                   Clinic Hours
                 </h4>
                 <div className="space-y-4">
                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-white/60 font-bold">Mon - Fri</span>
-                      <span className="text-white font-black">09:00 - 21:00</span>
-                   </div>
-                   <div className="flex justify-between items-center text-sm">
-                      <span className="text-white/60 font-bold">Saturday</span>
-                      <span className="text-white font-black">10:00 - 18:00</span>
+                      <span className="text-white/60 font-bold">Mon - Sat</span>
+                      <span className="text-white font-bold">3:00 PM - 10:00 PM</span>
                    </div>
                    <div className="flex justify-between items-center text-sm">
                       <span className="text-white/60 font-bold">Sunday</span>
-                      <span className="text-brand-secondary font-black uppercase tracking-tighter">Emergency Only</span>
+                      <span className="text-brand-secondary font-bold uppercase tracking-tighter">Emergency Only</span>
                    </div>
                 </div>
                 <button className="w-full bg-brand-secondary text-brand-primary py-4 rounded-xl font-bold uppercase tracking-widest text-[11px] shadow-lg hover:bg-white transition-all active:scale-95">

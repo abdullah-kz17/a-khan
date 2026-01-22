@@ -188,7 +188,7 @@ export default function Testimonials() {
                  },
                  { 
                    title: "Manual Expertise", 
-                   desc: "My hands-on clinical manipulation techniques are refined through 16+ years of specialized physical therapy practice.", 
+                   desc: "My hands-on clinical manipulation techniques are refined through 6+ years of specialized physical therapy practice.", 
                    img: "/images/Phisiotherapy-amico (1).png",
                    tag: "Phase 02"
                  },

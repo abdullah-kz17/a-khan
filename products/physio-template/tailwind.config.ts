@@ -26,10 +26,17 @@ const config: Config = {
           secondary: "#4B5563",
           light: "#9CA3AF",
         },
+        brand: {
+          primary: "#153e75",
+          secondary: "#84cc16",
+          accent: "#1e293b",
+          light: "#f8fafc",
+          dark: "#0f172a",
+        },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
-        heading: ["var(--font-poppins)", "sans-serif"],
+        body: ["var(--font-body)", "sans-serif"],
+        heading: ["var(--font-heading)", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-outwards",

@@ -2,24 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "tailwindcss";
 
-
-@theme {
-  --color-brand-primary: #153e75; /* Royal Deep Blue */
-  --color-brand-secondary: #84cc16; /* Vibrant Lime Green */
-  --color-brand-accent: #1e293b; /* Deep Slate */
-  --color-brand-light: #f8fafc; /* Off-white / Silver */
-  --color-brand-dark: #0f172a; /* Near-black Navy */
-
-  
-  --font-heading: var(--font-outfit);
-  --font-body: var(--font-dmsans);
-} 
+ 
 
 @layer base {
   body {
-    @apply bg-white text-[#1F2937] antialiased selection:bg-brand-secondary/30 selection:text-black;
+    @apply font-body antialiased bg-[#FCFAFA] text-slate-800 selection:bg-brand-secondary/30 selection:text-black;
   }
   
   h1, h2, h3, h4, h5, h6 {
