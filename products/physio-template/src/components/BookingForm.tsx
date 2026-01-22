@@ -25,10 +25,10 @@ export default function BookingForm() {
         // Collect form data
         const formData = new FormData(e.target as HTMLFormElement);
         const data = {
-            patientName: (e.target as HTMLFormElement).querySelector('input[type="text"]')?.value,
-            phone: (e.target as HTMLFormElement).querySelector('input[type="tel"]')?.value,
-            date: (e.target as HTMLFormElement).querySelector('input[type="date"]')?.value,
-            service: (e.target as HTMLFormElement).querySelector('select')?.value,
+            patientName: (e.target as HTMLFormElement).querySelector<HTMLInputElement>('input[type="text"]')?.value,
+            phone: (e.target as HTMLFormElement).querySelector<HTMLInputElement>('input[type="tel"]')?.value,
+            date: (e.target as HTMLFormElement).querySelector<HTMLInputElement>('input[type="date"]')?.value,
+            service: (e.target as HTMLFormElement).querySelector<HTMLSelectElement>('select')?.value,
             time: time
         };
 
