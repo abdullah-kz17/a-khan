@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { CheckCircle2, User } from "lucide-react";
 
 export default function AboutDoctor() {
@@ -21,12 +22,14 @@ export default function AboutDoctor() {
             className="w-full lg:w-1/2 relative"
           >
             <div className="aspect-[4/5] rounded-[4rem] overflow-hidden relative shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border-8 border-white group">
-              <img 
+              <Image 
                 src="/images/owner-pic.jpeg" 
                 alt="Dr. Moez Khan" 
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-transparent to-transparent opacity-60 z-10" />
               
               {/* Floating Badge */}
               <motion.div 

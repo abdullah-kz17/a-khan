@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { CheckCircle2, ChevronRight, Activity, Zap, Shield, Heart } from "lucide-react";
 
 const DEPARTMENTS = [
@@ -55,7 +56,13 @@ export default function WhyChooseUs() {
               className="relative"
             >
               <div className="relative aspect-[4/5] rounded-[2rem] shadow-2xl overflow-hidden group">
-                 <img src="/images/Doctors-amico.png" alt="Expert Medical Specialist" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                 <Image 
+                   src="/images/Doctors-amico.png" 
+                   alt="Expert Medical Specialist" 
+                   fill
+                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                   sizes="(max-width: 768px) 100vw, 50vw"
+                 />
                  <div className="absolute inset-0 bg-brand-primary/10" />
                  <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/40 to-transparent" />
               </div>

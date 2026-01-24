@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -207,8 +208,14 @@ export default function Testimonials() {
                    className="flex flex-col space-y-8 group"
                  >
                     <div className="relative w-full aspect-[4/5] rounded-[3.5rem] overflow-hidden bg-white/5 border border-white/10 group-hover:border-brand-secondary transition-all shadow-2xl">
-                       <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                       <div className="absolute top-8 left-8 bg-brand-secondary text-brand-primary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">
+                       <Image 
+                          src={item.img} 
+                          alt={item.title} 
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-700" 
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                       />
+                       <div className="absolute top-8 left-8 bg-brand-secondary text-brand-primary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest z-10">
                           {item.tag}
                        </div>
                     </div>

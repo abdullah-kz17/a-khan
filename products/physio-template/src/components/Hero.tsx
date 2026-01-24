@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight, CheckCircle, Users, Activity, Clock, ChevronRight } from "lucide-react";
 
 export default function Hero() {
@@ -8,24 +9,22 @@ export default function Hero() {
     <>
       <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden bg-brand-primary">
         {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none transform-gpu translate-z-0">
           <motion.div 
             animate={{ 
-              scale: [1, 1.2, 1],
-              rotate: [0, 90, 0],
-              opacity: [0.1, 0.2, 0.1]
+              scale: [1, 1.1, 1],
+              opacity: [0.1, 0.15, 0.1]
             }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-brand-secondary/20 rounded-full blur-[120px]" 
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+            className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-brand-secondary/20 rounded-full blur-[80px] will-change-transform" 
           />
           <motion.div 
             animate={{ 
-              scale: [1, 1.3, 1],
-              rotate: [0, -90, 0],
-              opacity: [0.05, 0.15, 0.05]
+              scale: [1, 1.2, 1],
+              opacity: [0.05, 0.1, 0.05]
             }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="absolute -bottom-[10%] -right-[10%] w-[60%] h-[60%] bg-brand-secondary/10 rounded-full blur-[140px]" 
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="absolute -bottom-[10%] -right-[10%] w-[60%] h-[60%] bg-brand-secondary/10 rounded-full blur-[100px] will-change-transform" 
           />
           <div className="absolute inset-0 bg-gradient-to-b from-brand-primary via-transparent to-brand-primary/40 z-10" />
         </div>
@@ -95,8 +94,13 @@ export default function Hero() {
               >
                 <div className="flex -space-x-3">
                   {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-brand-primary bg-slate-800 overflow-hidden">
-                      <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="User" />
+                    <div key={i} className="w-10 h-10 rounded-full border-2 border-brand-primary bg-slate-800 overflow-hidden relative">
+                      <Image 
+                        src={`https://i.pravatar.cc/100?img=${i+10}`} 
+                        alt="Patient" 
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                   ))}
                   <div className="w-10 h-10 rounded-full border-2 border-brand-primary bg-brand-secondary flex items-center justify-center text-[10px] font-black text-brand-primary">
@@ -109,27 +113,33 @@ export default function Hero() {
               </motion.div>
             </div>
 
-            {/* Doctor Card UI */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
               className="relative order-1 lg:order-2"
             >
-              <div className="relative z-10 aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
-                <img src="/images/owner-pic.jpeg" className="w-full h-full object-cover" alt="Dr Moez Khan" />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/80 via-transparent to-transparent" />
+              <div className="relative z-10 aspect-[4/5] md:aspect-[3/4] rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
+                <Image 
+                  src="/images/owner-pic.jpeg" 
+                  alt="Dr Moez Khan" 
+                  fill
+                  priority
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/90 via-brand-primary/20 to-transparent z-10" />
                 
                 {/* Floating Info Card */}
                 <motion.div 
-                  initial={{ x: 50, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.6 }}
-                  className="absolute bottom-10 left-10 right-10 p-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2rem] space-y-2"
+                  className="absolute bottom-4 left-4 right-4 md:bottom-10 md:left-10 md:right-10 p-5 md:p-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-[1.5rem] md:rounded-[2rem] space-y-3 z-20"
                 >
-                  <h3 className="text-3xl font-black text-white">Dr. Moez Khan</h3>
-                  <div className="flex justify-between items-center">
-                    <span className="text-brand-secondary font-bold text-xs uppercase tracking-[0.2em]">Physiotherapist & Chiropractor</span>
+                  <h3 className="text-2xl md:text-3xl font-black text-white">Dr. Moez Khan</h3>
+                  <div className="flex flex-col sm:flex-row gap-2 sm:font-bold items-start sm:items-center justify-between">
+                    <span className="text-brand-secondary text-xs font-bold uppercase tracking-[0.15em]">Physiotherapist & Chiropractor</span>
                     <div className="bg-brand-secondary/20 px-3 py-1 rounded-full text-[10px] font-black text-brand-secondary uppercase border border-brand-secondary/30">
                       Expert
                     </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Activity, Zap, Shield, Heart, HandIcon, Accessibility, ChevronRight } from "lucide-react";
 
 const SERVICES = [
@@ -71,10 +72,12 @@ export default function Services() {
             >
               {/* Image Header */}
               <div className="aspect-video relative overflow-hidden bg-brand-primary/5">
-                 <img 
+                 <Image 
                     src={service.image} 
                     alt={service.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                    sizes="(max-width: 768px) 100vw, 33vw"
                  />
                  <div className="absolute inset-0 bg-brand-primary/5 group-hover:bg-transparent transition-colors" />
                  <div className="absolute top-6 left-6 w-12 h-12 bg-white/90 backdrop-blur-md text-brand-secondary rounded-xl flex items-center justify-center shadow-lg group-hover:bg-brand-primary group-hover:text-brand-secondary transition-colors duration-500">

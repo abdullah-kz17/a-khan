@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { X, Maximize2, Camera } from "lucide-react";
 
 const GALLERY_IMAGES = [
@@ -62,10 +63,12 @@ export default function Gallery() {
                `}
                onClick={() => setSelectedImage(img)}
              >
-                <img 
+                <Image 
                    src={img.src} 
                    alt={img.alt} 
-                   className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 group-hover:rotate-1" 
+                   fill
+                   className="object-cover transition-all duration-1000 group-hover:scale-110 group-hover:rotate-1" 
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 
                 {/* Advanced Overlay */}

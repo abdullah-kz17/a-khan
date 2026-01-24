@@ -26,11 +26,13 @@ export default function ContactFooter() {
                  { title: "Physical Therapy vs Chiro Therapy", date: "Jan 02, 2026", cat: "Clinical", desc: "How to choose the right path for your specific musculoskeletal condition and recovery goal." }
                ].map((post, i) => (
                  <div key={i} className="group cursor-pointer">
-                    <div className="aspect-video rounded-[2.5rem] mb-8 overflow-hidden group-hover:shadow-2xl transition-all duration-500 bg-brand-primary/5">
-                       <img 
+                    <div className="aspect-video rounded-[2.5rem] mb-8 overflow-hidden group-hover:shadow-2xl transition-all duration-500 bg-brand-primary/5 relative">
+                       <Image 
                           src={i === 0 ? "/images/Hospital bed-bro.png" : "/images/Forensic medicine-pana.png"} 
                           alt={post.title} 
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                          sizes="(max-width: 768px) 100vw, 50vw"
                        />
                     </div>
                     <div className="space-y-4">
