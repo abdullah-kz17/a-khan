@@ -59,6 +59,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: '/images/a-khan-logo.png',
+    shortcut: '/images/a-khan-logo.png',
     apple: '/images/a-khan-logo.png',
   },
 };
